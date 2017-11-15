@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    background-color: lightgray;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 62.2vw;
+    height: 15vh;
+    margin: auto;
+    line-height: 15vh;
+    text-align: center;
+    background-color: #4527a0;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 1vh;
+}
+
+nav {
+    width: 15vw;
+    height: 60vh;
+    background-color: #4527a0;
+    margin-left: -14vw;
+    position: fixed;
+    margin-top: -15vh;
+}
+
+#container {
+    width: 62.2vw;
+    margin: auto;
+}
+
+.art {
+    width: 60vw;
+    min-height: 9.5vh;
+    margin: auto;
+    word-wrap: break-word;
+    background-color: white;
+    border-bottom: 1px solid #7953d2;
+    padding: 20px;
+}
+
+.add {
+    height: 60px;
+    width: 60px;
+    border: 1px solid #7953d2;
+    border-radius: 60px;
+    line-height: 60px;
+    background-color: #7953d2;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 100;
+    box-shadow: 0px 3px 6px 1px gray;
+    outline: 0;
+}
+
+#add_newpost {
+    margin-left: 75vw;
+    margin-top: -3.7vh;
+    font-size: 30px;
+}
+
+#open_nav {
+    margin-left: 13.5vw;
+    margin-top: 8vh;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.material-icons {
+    font-size: 35px;
+}
+
+#connect {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3vh;
+    width: 61vw;
+    background-color: #388e3c;
+    line-height: 3vh;
+    text-align: center;
+    color: white;
+    bottom: 0;
+}
+
+#new {
+    width: 62.2vw;
+    height: 0px;
+    background-color: #4527a0;
+    margin: auto;
+}
+
+#form {
+    visibility: hidden;
+    width: 62.2vw;
+    margin: auto;
+}
+
+.art_text {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    background-color: #4527a0;
+    height: 20px;
+    color: white;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 160px;
+    outline: 0;
+}
+
+.art_label {
+    color: white;
+    font-weight: 400;
+    width: 50px;
+}
+
+.art_label_add{
+	 margin-left: 26vw;
+}
+
+.art_label_log{
+	margin-left: 2vw;
+}
+
+.buttons {
+    width: 100px;
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: #4527a0;
+    color: white;
+    border: 0px;
+    transition: background-color 0.5s linear;
+    outline: 0;
+}
+.butttons_add{
+	margin: auto;
+	margin-top: 20px;
+}
+
+.buttons_log{
+	margin-left: 4.8vw;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    background-color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
+
+#send_button {
+    margin-left: 25.5vw;
+
+}
+
+.art_button {
+    position: absolute;
+    cursor: pointer;
+    height: 2vw;
+    line-height: 4vh;
+    width: 6vw;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    font-size: 0.8vw;
+    outline: 0;
+    background-color: #7953d2;
+    color: white;
+    text-decoration: none;
+}
+
+#art_delete {
+    margin-top: -9.5vh;
+    right: 20vw;
+}
+
+.art_update {
+    margin-top: -4.5vh;
+    right: 20vw;
+}
+
+.art_tekst_max {
+    min-height: 9.5vh;
+    width: 50vw;
+    word-wrap: break-word;
+}
+
+.art_display_tytul {
+    font-style: italic;
+    font-size: 22px;
+}
+.art_display_tresc{
+    font-size: 18px;
+}
+
+.art_display {
+    border: 0;
+    background-color: white;
+    min-height: 2vh;
+    line-height: 2vh;
+    outline: 0;
+
+}
+
+.art_send {
+    position: absolute;
+    visibility: hidden;
+    right: 20vw;
+}
+
+#artid {
+    display: none;
+}
+
+#log_msg{
+	color: white;
+	text-align:center;
+	width:15vw;
+    font-size: 1vw;
+}
+
+#try_again{
+	margin:auto;
+}
+
+#buttons_log_out{
+	text-decoration:none;
+	display: block;
+    line-height: 4.35vh;
+    margin:auto;
+    margin-top: 2vh;
+}
+
+.unknown_user{
+    width:60vw;
+    height:6vh;
+    margin:auto;
+    line-height: 6vh;
+    text-align: center;
+    font-size: 1.5vw;
+    background-color: #b4004e;
+    color: white;
+}
+
+.bad_login{
+    margin:auto;
+    color:white;
+    width:14.5vw;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
