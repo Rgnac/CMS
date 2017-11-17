@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="theme-color" content="#4527a0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -16,11 +17,20 @@
     <header>CMS</header>
     <nav>
         <div class="add open_anim" id="open_nav"><i class="material-icons">keyboard_arrow_right</i></div>
+
      <?php
+    //                                         LOG FORM
+     $show_tables = '<div class="log_msg" style="margin-bottom:3vh;">Dostepne tabele:</div>
+                    <div class="switch_tb" id="tb1">Artykuły</div>
+                    <div class="switch_tb" id="tb2">Artykuły 2</div>
+                    <div class="switch_tb" id="tb3">Artykuły 3</div>
+                    <div class="switch_tb" id="tb4">Artykuły 4</div>';
+
      if(isset($_SESSION["log"])&&($_SESSION["log"]==1))
-         echo '<div id="log_msg"> Witaj, '.$_SESSION["user"].'</div>'.
-                '<a href="log_out.php" class="buttons" id="buttons_log_out">wyloguj</a>'.
-                '<script>var c=0</script>';
+         echo '<div class="log_msg"> Witaj, '.$_SESSION["user"].'</div>'.
+                '<a href="log_out.php" class="buttons" id="buttons_log_out" >wyloguj</a>'.
+                '<script>var c=0</script>'.
+                $show_tables;
     else if(isset($_SESSION["log"])&&($_SESSION["log"]==0))
         echo
             '<form id="login_form" action="log_on.php" method="post">
@@ -30,7 +40,8 @@
             <input type="password" name="password" class="art_text" required>
             <div class="bad_login">Zły login lub hasło</div>
             <input type="submit" name="log_on" class="buttons buttons_log" value="Zaloguj">'.
-            '<script>var c=1</script>';
+            '<script>var c=1</script>'.
+            $show_tables;
     else 
         echo
             '<form id="login_form" action="log_on.php" method="post">
@@ -39,7 +50,8 @@
             <label class="art_label art_label_log" for="password">Hasło</label>
             <input type="password" name="password" class="art_text" required>
             <input type="submit" name="log_on" class="buttons buttons_log" value="Zaloguj">'.
-            '<script>var c=1</script>';
+            '<script>var c=1</script>'.
+            $show_tables;
          ?>   
         </form>
     </nav>
@@ -55,16 +67,20 @@
         </div>
     </div>
 	<?php
+    //                          ALERT / ADD BUTTON
+
 	 if(isset($_SESSION["log"])&&($_SESSION["log"]==1))
 		echo '<button class="add" id="add_newpost">+</button>';
      else
         echo '<br><div class="unknown_user">Zaloguj się aby edytować posty</div>';
 	?>
-    <div id="container">
-      <?php
-      require 'connect.php';
 
-      
+    <div id="container">
+
+      <?php
+      //                                DISPLAY ARTICLES
+      require 'connect.php'; 
+
       if(isset($_POST['send_button'])){
         $art_tytul = mysqli_real_escape_string($connect,$_POST['art_tytul']);
         $art_tresc = mysqli_real_escape_string($connect,$_POST['art_tresc']);
@@ -103,10 +119,10 @@
         else{
             echo 
             '<div class="art">'.
-            '<form id="form_update" action="update.php" method="post"><input type="text" class="art_display" name="art_display_tytul" value="'.
+            '<form id="form_update" action="update.php" method="post"><input type="text" class="art_display art_display_tytul" name="art_display_tytul" value="'.
             $row["tytul"].
             '" readonly><br>'.
-            '<input type="text" class="art_display" name="art_display_tresc" value="'.
+            '<input type="text" class="art_display art_display_tresc" name="art_display_tresc" value="'.
             $row["tresc"]. 
             '" readonly>'.
             "<br> Data dodania: ".
