@@ -122,12 +122,12 @@ nav {
     width: 50px;
 }
 
-.art_label_add{
-	 margin-left: 26vw;
+.art_label_add {
+    margin-left: 26vw;
 }
 
-.art_label_log{
-	margin-left: 2vw;
+.art_label_log {
+    margin-left: 2vw;
 }
 
 .buttons {
@@ -143,13 +143,14 @@ nav {
     transition: background-color 0.3s linear;
     outline: 0;
 }
-.butttons_add{
-	margin: auto;
-	margin-top: 20px;
+
+.butttons_add {
+    margin: auto;
+    margin-top: 20px;
 }
 
-.buttons_log{
-	margin-left: 4.8vw;
+.buttons_log {
+    margin-left: 4.8vw;
     margin-bottom: 2vh;
 }
 
@@ -162,7 +163,6 @@ nav {
 
 #send_button {
     margin-left: 25.5vw;
-
 }
 
 .art_button {
@@ -203,7 +203,8 @@ nav {
     font-style: italic;
     font-size: 22px;
 }
-.art_display_tresc{
+
+.art_display_tresc {
     font-size: 18px;
 }
 
@@ -213,7 +214,6 @@ nav {
     min-height: 2vh;
     line-height: 2vh;
     outline: 0;
-
 }
 
 .art_send {
@@ -227,30 +227,30 @@ nav {
     display: none;
 }
 
-.log_msg{
-	color: white;
-	text-align:center;
-	width:15vw;
+.log_msg {
+    color: white;
+    text-align: center;
+    width: 15vw;
     font-size: 1vw;
 }
 
-#try_again{
-	margin:auto;
+#try_again {
+    margin: auto;
 }
 
-#buttons_log_out{
-	text-decoration:none;
-	display: block;
+#buttons_log_out {
+    text-decoration: none;
+    display: block;
     line-height: 4.35vh;
-    margin:auto;
+    margin: auto;
     margin-top: 2vh;
     margin-bottom: 4vh;
 }
 
-.unknown_user{
-    width:60vw;
-    height:6vh;
-    margin:auto;
+.unknown_user {
+    width: 60vw;
+    height: 6vh;
+    margin: auto;
     line-height: 6vh;
     text-align: center;
     font-size: 1.5vw;
@@ -258,28 +258,25 @@ nav {
     color: white;
 }
 
-.bad_login{
-    margin:auto;
-    color:white;
-    width:14.5vw;
+.bad_login {
+    margin: auto;
+    color: white;
+    width: 14.5vw;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 /* table choose */
-.switch_tb{
-    width:13vw;
+.switch_tb {
+    width: 13vw;
     padding-left: 2vw;
-    height:4vh;
-    color:white;
+    height: 4vh;
+    color: white;
     line-height: 4vh;
     font-size: 0.9vw;
 }
-.switch_tb:hover{
-    background-color: #7953d2;
-    border-bottom:  1px solid #d9d9d9;
-    border-top: 1px solid #d9d9d9;
+
+.switch_tb:hover {
     cursor: pointer;
-    transition: background-color 0.3s linear;
 }
