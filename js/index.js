@@ -26,9 +26,9 @@ $(document).ready(function() {
         $('#form1')[0].reset();
     });
     //update animations
-    function edytuj(){
+
     var b = 0;
-    $('.art_update').click(function() {
+    $(document).on('click', '.art_update', function() {
         if (b == 0) {
             $(this).parent().find('.art_display').css({
                 borderBottom: '0px solid #4527a0'
@@ -52,7 +52,6 @@ $(document).ready(function() {
         }
 
     });
-}
 
     //open navbar
     if (c == 1) {
@@ -91,26 +90,22 @@ $(document).ready(function() {
 
     //ajax table change
     change(0);
-    set=0;
+    set = 0;
     $('#tb1').click(function() {
         set = 1;
         change(set);
-        edytuj();
     });
     $('#tb2').click(function() {
         set = 2;
         change(set);
-        edytuj();
     });
     $('#tb3').click(function() {
         set = 3;
         change(set);
-        edytuj();
     });
     $('#tb4').click(function() {
         set = 4;
         change(set);
-        edytuj();
     });
 
     function change(set) {
@@ -226,7 +221,6 @@ $(document).ready(function() {
             }
         }
 
-
     }
     //      insert 
     $('#send_button').click(function() {
@@ -258,7 +252,7 @@ $(document).ready(function() {
                         art_tytul: tytul,
                         art_tresc: tresc
                     },
-                      success: function(page) {
+                    success: function(page) {
                         $('#container').html(page);
                     }
                 });
@@ -273,7 +267,7 @@ $(document).ready(function() {
                         art_tytul: tytul,
                         art_tresc: tresc
                     },
-                     success: function(page) {
+                    success: function(page) {
                         $('#container').html(page);
                     }
                 });
@@ -288,7 +282,7 @@ $(document).ready(function() {
                         art_tytul: tytul,
                         art_tresc: tresc
                     },
-                      success: function(page) {
+                    success: function(page) {
                         $('#container').html(page);
                     }
                 });
@@ -303,13 +297,181 @@ $(document).ready(function() {
                         art_tytul: tytul,
                         art_tresc: tresc
                     },
-                      success: function(page) {
+                    success: function(page) {
                         $('#container').html(page);
                     }
                 });
             }
 
         }
-      
     });
+    // DELETE
+    $(document).on('click', '.art_delete', function() {
+        var id = $(this).parent().find('#artid').val();
+        switch (set) {
+        case 1:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete1.php",
+                    data: {
+                        id: id,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        case 2:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete2.php",
+                    data: {
+                        id: id,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+
+            }
+        case 3:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete3.php",
+                    data: {
+                        id: id,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        case 4:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete4.php",
+                    data: {
+                        id: id,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        default:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete1.php",
+                    data: {
+                        id: id,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+
+            }
+        }
+    });
+
+    //UPDATE
+ $(document).on('click', '.art_send', function() {
+    var id2 = $(this).parent().find('#artid').val();
+    var tytul_e = $(this).parent().find('.art_display_tytul').val();
+    var tresc_e = $(this).parent().find('.art_display_tresc').val();
+    switch(set){
+        case 1:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete1.php",
+                    data: {
+                        id2: id2,
+                        tytul_e:tytul_e,
+                        tresc_e:tresc_e,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        case 2:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete2.php",
+                    data: {
+                        id2: id2,
+                        tytul_e:tytul_e,
+                        tresc_e:tresc_e,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+
+            }
+        case 3:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete3.php",
+                    data: {
+                        id2: id2,
+                        tytul_e:tytul_e,
+                        tresc_e:tresc_e,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        case 4:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete4.php",
+                    data: {
+                        id2: id2,
+                        tytul_e:tytul_e,
+                        tresc_e:tresc_e,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+                break;
+            }
+        default:
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "tables/delete1.php",
+                    data: {
+                        id2: id2,
+                        tytul_e:tytul_e,
+                        tresc_e:tresc_e,
+                    },
+                    success: function(page) {
+                        $('#container').html(page);
+                    }
+                });
+
+            }
+        }
+    
+});
+
 });

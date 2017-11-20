@@ -1,14 +1,25 @@
-<?php 
+<?php
 session_start();
-require '../connect.php';
-if(isset($_POST['art_tytul'])){
-    $art_tytul = mysqli_real_escape_string($connect,$_POST['art_tytul']);
-    $art_tresc = mysqli_real_escape_string($connect,$_POST['art_tresc']);
+
+	require '../connect.php';
+
+	if (isset($_POST['id']))
+	{
+	$id = $_POST['id'];
+	$delete = "DELETE FROM art2 WHERE id=".$id;
+	$connect->query($delete);
+    }
+    if(isset($_POST['id2'])){
+    $id2=$_POST['id2'];
+    $tytul_e = mysqli_real_escape_string($connect,$_POST['tytul_e']);
+    $tresc_e = mysqli_real_escape_string($connect,$_POST['tresc_e']);
     $user = $_SESSION["user"];
-    $qe_insert = "INSERT INTO art VALUES ('','$user',now(),'$art_tresc','$art_tytul')";
-    $result = $connect->query($qe_insert);
-}
- $qe1 = "SELECT * from art ORDER BY data DESC";
+    $update = "UPDATE art2 SET autor=\"$user\", data = now(),tytul=\"$tytul_e\",tresc=\"$tresc_e\" WHERE id=".$id2;
+    $up_query= $connect->query($update);
+    }
+
+
+	$qe1 = "SELECT * from art2 ORDER BY data DESC";
     $res1 = $connect->query($qe1);
 
     if($res1 ->num_rows > 0){
@@ -30,7 +41,7 @@ if(isset($_POST['art_tytul'])){
             $row["id"].
             '" readonly>'.
             '</b><button class="art_button art_delete">Usuń</button>'.
-            '<input type="button" class="art_button art_send" value="Wyslij">'.
+            '<input type="submit" class="art_button art_send" value="Wyslij">'.
             '<button class="art_update art_button">Edytuj</button></div>';
         }
 
@@ -54,4 +65,5 @@ if(isset($_POST['art_tytul'])){
     
 else
         echo '<script> alert("Pusta baza");</script>';
+	
 ?>

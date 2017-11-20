@@ -17,7 +17,7 @@ if(isset($_POST['art_tytul'])){
           if(isset($_SESSION["log"])&&($_SESSION["log"]==1)){
             echo 
             '<div class="art">'.
-            '<form id="form_update" action="update.php" method="post"><input type="text" class="art_display art_display_tytul" name="art_display_tytul" value="'.
+            '<input type="text" class="art_display art_display_tytul" name="art_display_tytul" value="'.
             $row["tytul"].
             '" readonly><br>'.
             '<input type="text" class="art_display art_display_tresc" name="art_display_tresc" value="'.
@@ -30,10 +30,8 @@ if(isset($_POST['art_tytul'])){
             '<input type="text" id="artid" name="artid" value="'.
             $row["id"].
             '" readonly>'.
-            '</b><a href="delete.php?id='.
-            $row["id"].
-            '" id="art_delete" class="art_button">Usuń</a>'.
-            '<input type="submit" class="art_button art_send" value="Wyslij"></form>'.
+            '</b><button class="art_button art_delete">Usuń</button>'.
+            '<input type="button" class="art_button art_send" value="Wyslij">'.
             '<button class="art_update art_button">Edytuj</button></div>';
         }
 

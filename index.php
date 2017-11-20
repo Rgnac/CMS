@@ -58,13 +58,13 @@
 </nav>
 <div id="new">
   <div id="form">
-    <form id="form1" method="post">
+    
         <label for="art_tytul" class="art_label art_label_add">Tytuł</label> 
         <input id="art_tytul" name="art_tytul" class="art_text" type="text" required /> 
         <label for="art_tresc" class="art_label art_label_add">Treść</label> 
         <input id="art_tresc" name="art_tresc" class="art_text" type="text" required /> 
-        <input class="buttons buttons_add" name="send_button" id="send_button" type="button" value="Wyślij" /> 
-        <input class="buttons buttons_add" id="clear_button" type="button" value="Wyczyść" /></form>
+        <input class="buttons buttons_add" name="send_button" id="send_button" type="submit" value="Wyślij" /> 
+        <input class="buttons buttons_add" id="clear_button" type="button" value="Wyczyść" />
     </div>
 </div>
 <?php
