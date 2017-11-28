@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
-    <script src="js/index.js"> </script>
+    <script src="js/index2.js"> </script>
     <link href="css/style.css" rel="stylesheet" />
     <meta charset="UTF-8" />
     <title>CMS</title>

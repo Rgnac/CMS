@@ -9,6 +9,21 @@ if(isset($_POST['art_tytul'])){
     $qe_insert = "INSERT INTO art2 VALUES ('','$user',now(),'$art_tresc','$art_tytul')";
     $result = $connect->query($qe_insert);
 }
+if (isset($_POST['id']))
+    {
+    $id = $_POST['id'];
+    $delete = "DELETE FROM art2 WHERE id=".$id;
+    $connect->query($delete);
+    }
+    if(isset($_POST['id2'])){
+    $id2=$_POST['id2'];
+    $tytul_e = mysqli_real_escape_string($connect,$_POST['tytul_e']);
+    $tresc_e = mysqli_real_escape_string($connect,$_POST['tresc_e']);
+    $user = $_SESSION["user"];
+    $update = "UPDATE art2 SET autor=\"$user\", data = now(),tytul=\"$tytul_e\",tresc=\"$tresc_e\" WHERE id=".$id2;
+    $up_query= $connect->query($update);
+    }
+
  $qe1 = "SELECT * from art2 ORDER BY data DESC";
     $res1 = $connect->query($qe1);
 
